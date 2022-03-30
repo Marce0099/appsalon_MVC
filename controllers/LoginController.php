@@ -76,6 +76,8 @@ class LoginController {
 
                     //  Enviar el email
                     $email = new Email($usuario->email, $usuario->nombre, $usuario->token);
+                    $root = explode("?", $_SERVER["REQUEST_URI"])[0];
+                    $email->setRoot($root);
                     $email->enviarInstrucciones();
 
                     // Alerta de exito
@@ -160,6 +162,8 @@ class LoginController {
 
                     // Enviar el Email
                     $email = new Email($usuario->nombre, $usuario->email, $usuario->token);
+                    $root = explode("?", $_SERVER["REQUEST_URI"])[0];
+                    $email->setRoot($root);
                     $email->enviarConfirmacion();
 
                     // Crear el usuario
