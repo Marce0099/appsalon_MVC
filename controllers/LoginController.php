@@ -76,8 +76,7 @@ class LoginController {
 
                     //  Enviar el email
                     $email = new Email($usuario->email, $usuario->nombre, $usuario->token);
-                   // $root = $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["HTTP_HOST"];
-                   $root = "hola";
+                    $root = $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["HTTP_HOST"];
                     $email->setRoot($root);
                     $email->enviarInstrucciones();
 
@@ -163,8 +162,8 @@ class LoginController {
 
                     // Enviar el Email
                     $email = new Email($usuario->nombre, $usuario->email, $usuario->token);
-                   // $root = $root = $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["HTTP_HOST"];
-                   $root = "hola";
+                    $root = $root = $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["HTTP_HOST"];
+                  
                     $email->setRoot($root);
                     $email->enviarConfirmacion();
 
