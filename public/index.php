@@ -9,7 +9,7 @@ use Controllers\LoginController;
 use Controllers\ServicioController;
 use MVC\Router;
 $router = new Router();
-echo "Hola";
+debuguear($_SERVER);
 // Iniciar Sesión
 $router->get('/', [LoginController::class, 'login']);
 $router->post('/', [LoginController::class, 'login']);
